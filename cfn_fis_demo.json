@@ -1,7 +1,7 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
 
-  "Description": "AWS CloudFormation Sample Template VPC_Single_Instance_In_Subnet: Sample template showing how to create a VPC and add an EC2 instance with an Elastic IP address and a security group. **WARNING** This template creates an Amazon EC2 instance. You will be billed for the AWS resources used if you create a stack from this template.",
+  "Description": "AWS CloudFormation AWS Fault Injection Simulator Demo Template creates a VPC, 2 public subnets and adds 11 EC2 instances with a security group, 2 CloudWatch Alarms, IAM Roles. **WARNING** This template creates 11 Amazon EC2 instances. You will be billed for the AWS resources used if you create a stack from this template.",
 
   "Parameters": {
     "SSMImageId": {
