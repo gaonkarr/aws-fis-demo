@@ -1,0 +1,34 @@
+{
+    "tags": {
+        "Name": "StopAndRestart3RandomTaggedInstances"
+    },
+    "description": "Stop and restart 3 random tagged instances",
+    "actions": {
+        "StopInstances": {
+            "actionId": "aws:ec2:stop-instances",
+            "description": "stop the instances",
+            "parameters": {
+                "startInstancesAfterDuration": "PT5M"
+            },
+            "targets": {
+                "Instances": "myInstance"
+            }
+        }
+    },
+    "stopConditions": [
+        {
+            "source": "aws:cloudwatch:alarm",
+            "value": "arn:aws:cloudwatch:us-east-1:01234567890:alarm:NetworkInAbnormal"
+        }
+    ],
+    "targets": {
+        "myInstance": {
+            "resourceTags": {
+                "Experiment": "ChaosReady"
+            },
+            "resourceType": "aws:ec2:instance",
+            "selectionMode": "COUNT(3)"
+        }
+    },
+    "roleArn": "arn:aws:iam::01234567890:role/MyFISExperimentRole"
+}

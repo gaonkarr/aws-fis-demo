@@ -1,9 +1,10 @@
 
-# AWS Fault Injection Simulator sample demo
+# AWS Fault Injection Simulator 
 
-- [AWS Fault Injection Simulator sample demo](#aws-fault-injection-simulator-sample-demo)
-- [Important!](#important)
+- [AWS Fault Injection Simulator](#aws-fault-injection-simulator)
   - [Pre-requisites](#pre-requisites)
+    - [Launch the CloudFormation template.](#launch-the-cloudformation-template)
+  - [Experiments](#experiments)
   - [Demo 1 : Stop random EC2 instances using Tags](#demo-1--stop-random-ec2-instances-using-tags)
   - [Demo 2 : Stop random EC2 instances using Tags and Alarms](#demo-2--stop-random-ec2-instances-using-tags-and-alarms)
   - [Demo 3 : Stop random EC2 instances using Tags, Alarms and Filters](#demo-3--stop-random-ec2-instances-using-tags-alarms-and-filters)
@@ -16,24 +17,53 @@ AWS Fault Injection Simulator (AWS FIS) is a managed service that enables you to
 
 To use AWS FIS, you set up and run experiments that help you create the real-world conditions needed to uncover application issues that can be difficult to find otherwise. AWS FIS provides templates that generate disruptions, and the controls and guardrails that you need to run experiments in production, such as automatically rolling back or stopping the experiment if specific conditions are met.
 
-# Important! 
+    # Important! 
 AWS FIS carries out real actions on real AWS resources in your system. Therefore, before you use AWS FIS to run experiments in production, we strongly recommend that you complete a planning phase and run the experiments in a pre-production environment.
 
 ## Pre-requisites
-To complete these demos, ensure Launch the CloudFormation template. 
+To complete these demos, ensure you have AWS CLI installed. 
 
-This template creates following resources in your AWS Account : 
-1. 
+### Launch the CloudFormation template. 
+
+1. Create a Keypair in your AWS account and note the Keypair name
+2. In the below command, replace the _\<keypair-name\>_ with your Keypair from Step 1. Run the command to create the CloudFormation stack. 
+
+```
+aws cloudformation create-stack --template-body file://cfn_fis_demo.json --stack-name fis-demo-stack --capabilities CAPABILITY_NAMED_IAM --parameters ParameterKey=KeyPairName,ParameterValue=<keypair-name>
+
+```
+It creates 11 EC2 instances of t2.micro. Edit the CloudFormation template, if you wish to launch fewer EC2 instances. Ensure you have instances in both the subnets/Availability zones. 
+
+## Experiments
+
+To identify your target resources, you can specify the following:
+
+Resource tags – The tags applied to target resources. For example, you can specify that the target EC2 instances must include the tag "Experiment=ChaosReady". You will learn how to specify resources based on tags in Demo 1.
+
+Resource filters – The path and values that represent resources with specific attributes. For more information, see Resource filters. You will learn how to specify resources based on tags and filters in Demo 3.
+
+Resource IDs – The resource IDs of specific AWS resources. For example, the resource ID of an Amazon EC2 instance, such as i-1122334455aabbccd. All resource IDs must be the same resource type. You will learn how to specify specific AWS resources in Demo 4.
 
 
-## Demo 1 : Stop random EC2 instances using Tags
-## Demo 2 : Stop random EC2 instances using Tags and Alarms
-## Demo 3 : Stop random EC2 instances using Tags, Alarms and Filters
-## Demo 4 : Stop random EC2 instances using SSM
+## [Demo 1 : Stop random EC2 instances using Tags](demo-1/README.md)
+## [Demo 2 : Stop random EC2 instances using Tags and Alarms](demo-2/README.md)
+## [Demo 3 : Stop random EC2 instances using Tags, Alarms and Filters](demo-3/README.md)
+## [Demo 4 : Stop random EC2 instances using SSM](demo-4/README.md)
 
 ## Clean up
 
 Remember to delete all the resources once you are done testing.
+
+1. Delete the FIS Experiments. Replace _\<value\>_ with your experiment IDs. Use `aws fis list-experiment-templates` to retrieve the list.
+
+```
+aws fis delete-experiment-template --id <value>
+```
+2. Delete the CloudFormation stack
+   
+```
+aws cloudformation delete-stack --stack-name fis-demo-stack
+```
 
 
 ## References and more
