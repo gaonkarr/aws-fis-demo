@@ -1,8 +1,8 @@
 {
     "tags": {
-        "Name": "StopAndRestart3RandomTaggedInstances"
+        "Name": "StopAndRestart5RandomTaggedInstances"
     },
-    "description": "Stop and restart 3 random tagged instances",
+    "description": "Stop and restart 5 random tagged instances",
     "actions": {
         "StopInstances": {
             "actionId": "aws:ec2:stop-instances",
@@ -21,7 +21,7 @@
                 "Experiment": "ChaosReady"
             },
             "resourceType": "aws:ec2:instance",
-            "selectionMode": "COUNT(3)"
+            "selectionMode": "COUNT(5)"
         }
     },
     "roleArn": "arn:aws:iam::01234567890:role/MyFISExperimentRole"

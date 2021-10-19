@@ -14,7 +14,7 @@ In this experiment, we will be randomly stopping instances that are tagged. We w
 
 ```
 
-2. Create AWS FIS Experiment Template to randomly stop and re-start 3 random tagged instances. These instances will be automatically started in 5 mins. 
+2. Create AWS FIS Experiment Template to randomly stop and re-start 5 random tagged instances. These instances will be automatically started in 5 mins. 
 
 ```
 aws fis create-experiment-template --cli-input-json file://fis-stop-random-alarm.json
@@ -41,7 +41,7 @@ aws cloudwatch set-alarm-state --alarm-name "NetworkInAbnormal" --state-value AL
 
 If you are using FIS for the first time then it is easy to view the experiments in the AWS Console. 
 
-When you start the AWS FIS Experiment, FIS will randomly stop 3 instances that are tagged with the keypair "Experiment=ChaosReady". It will wait for 5 mins before restarting the EC2 instances. 
+When you start the AWS FIS Experiment, FIS will randomly stop 5 instances that are tagged with the keypair "Experiment=ChaosReady". It will wait for 5 mins before restarting the EC2 instances. 
 
 However, we will simulate real world use-case of issue detected when instances went offline and a CloudWatch alarm is raised. As the Alarm state changes to InAlarm, FIS will stop the experiment and rollback to stead state, i.e. all instances are up and running.
 

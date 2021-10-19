@@ -70,11 +70,11 @@ We will be running simple experiments like stopping an EC2 instance or stress CP
 
 To identify your target resources like which EC2 instances FIS can carry out the actions, you can specify the following:
 
-- **Resource tags** – The tags applied to target resources. For example, you can specify that the target EC2 instances must include the tag "Experiment=ChaosReady". You will learn how to specify resources based on tags in Demo 1.
+- **Resource tags** – The tags applied to target resources. For example, you can specify that the target EC2 instances must include the tag "Experiment=ChaosReady". You will learn how to specify resources based on tags in **Demo 1**.
 
-- **Resource filters** – The path and values that represent resources with specific attributes. For more information, see Resource filters. You will learn how to specify resources based on tags and filters in Demo 3.
+- **Resource filters** – The path and values that represent resources with specific attributes. For more information, see Resource filters. You will learn how to specify resources based on tags and filters in **Demo 3**.
 
-- **Resource IDs** – The resource IDs of specific AWS resources. For example, the resource ID of an Amazon EC2 instance, such as i-12345abcd. All resource IDs must be the same resource type. You will learn how to specify specific AWS resources in Demo 4.
+- **Resource IDs** – The resource IDs of specific AWS resources. For example, the resource ID of an Amazon EC2 instance, such as i-12345abcd. All resource IDs must be the same resource type. You will learn how to specify specific AWS resources in **Demo 4**.
 
 
 ### [Demo 1 : Stop random EC2 instances using Tags](demo-1/)

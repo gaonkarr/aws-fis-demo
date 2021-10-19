@@ -11,7 +11,7 @@ In this experiment, we will be randomly stopping instances that are tagged. We w
 "roleArn": "arn:aws:iam::<01234567890>:role/MyFISExperimentRole"
 ```
 
-2. Create AWS FIS Experiment Template to randomly stop and re-start 3 random tagged instances. These instances will be automatically started in 2 mins. 
+2. Create AWS FIS Experiment Template to randomly stop and re-start 5 random tagged instances. These instances will be automatically started in 2 mins. 
 
 ```
 aws fis create-experiment-template --cli-input-json file://fis-stop-random.json
@@ -30,7 +30,7 @@ aws fis start-experiment --experiment-template-id <experiment-template-id>
 
 If you are using FIS for the first time then it is easy to view the experiments in the AWS Console. 
 
-When you start the AWS FIS Experiment, FIS will randomly stop 3 instances that are tagged with the keypair "Experiment=ChaosReady". It will wait for 2mins and restart the EC2 instances. 
+When you start the AWS FIS Experiment, FIS will randomly stop 5 instances that are tagged with the keypair "Experiment=ChaosReady". It will wait for 2mins and restart the EC2 instances. 
 
 ![Experiment started](../images/demo1-experiment-started.png)
 ![Instances stopped](../images/demo1-instances-stopped.png)
