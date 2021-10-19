@@ -5,7 +5,7 @@ In this experiment, we will be randomly stopping instances that are tagged. We w
 
 ## Deployment
 
-1. Update the IAM Role Account ID in the /demo-1/fis-stop-random.json. Replace _\<01234567890\>_, with your Account ID.
+1. Update the IAM Role Account ID in the [/demo-1/fis-stop-random.json](fis-stop-random.json). Replace _\<01234567890\>_, with your Account ID.
 
 ```
 "roleArn": "arn:aws:iam::<01234567890>:role/MyFISExperimentRole"

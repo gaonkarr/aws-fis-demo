@@ -435,7 +435,56 @@
           }
         ]
       }
+    },
+
+    "CWAlarmNetworkInAbnormal": {
+      "Type": "AWS::CloudWatch::Alarm",
+      "Properties": {
+          "AlarmName": "NetworkInAbnormal",
+          "ActionsEnabled": true,
+          "OKActions": [],
+          "AlarmActions": [],
+          "InsufficientDataActions": [],
+          "MetricName": "NetworkIn",
+          "Namespace": "AWS/EC2",
+          "Statistic": "Average",
+          "Dimensions": [],
+          "Period": 300,
+          "EvaluationPeriods": 1,
+          "DatapointsToAlarm": 1,
+          "Threshold": 100,
+          "ComparisonOperator": "LessThanOrEqualToThreshold",
+          "TreatMissingData": "notBreaching"
+      }
+  },
+  "CWAlarm":
+  {
+    "Type": "AWS::CloudWatch::Alarm",
+    "Properties": {
+        "AlarmName": "ChaosDemo-High-CPU-Alarm",
+        "ActionsEnabled": true,
+        "OKActions": [],
+        "AlarmActions": [],
+        "InsufficientDataActions": [],
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Statistic": "Average",
+        "Dimensions": [
+            {
+                "Name": "InstanceId",
+                "Value": {
+                  "Ref": "EC2Instance"
+               }
+            }
+        ],
+        "Period": 60,
+        "EvaluationPeriods": 1,
+        "DatapointsToAlarm": 1,
+        "Threshold": 70,
+        "ComparisonOperator": "GreaterThanThreshold",
+        "TreatMissingData": "notBreaching"
     }
+}
   },
   "Outputs" : {
     "Demo4EC2instance" : {

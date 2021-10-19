@@ -5,7 +5,7 @@ In this experiment, we will be randomly stopping instances that are tagged. We w
 
 ## Deployment
 
-1. Update the IAM Role Account ID and CloudWatch Alarm in the /demo-2/fis-stop-random-alarm.json. Replace _\<01234567890\>_, with your Account ID. Also, replace the _\<region\>_ with correct region.
+1. Update the IAM Role Account ID and CloudWatch Alarm in the [/demo-2/fis-stop-random-alarm.json](fis-stop-random-alarm.json). Replace _\<01234567890\>_, with your Account ID. Also, replace the _\<region\>_ with correct region.
 
 ```
 "value": "arn:aws:cloudwatch:<region>:<01234567890>:alarm:NetworkInAbnormal"
@@ -30,7 +30,7 @@ aws fis start-experiment --experiment-template-id <experiment-template-id>
 
 4. Confirm that the EC2 instances have stopped.
  
-5. run the following command to manually trigger the CloudWatch Alarm. 
+5. Run the following command to manually trigger the CloudWatch Alarm. 
 
 ```
 aws cloudwatch set-alarm-state --alarm-name "NetworkInAbnormal" --state-value ALARM --state-reason "testing-rollback" 

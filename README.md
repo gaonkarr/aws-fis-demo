@@ -5,10 +5,10 @@
   - [Pre-requisites](#pre-requisites)
     - [Launch the CloudFormation template.](#launch-the-cloudformation-template)
   - [Experiments](#experiments)
-  - [Demo 1 : Stop random EC2 instances using Tags](#demo-1--stop-random-ec2-instances-using-tags)
-  - [Demo 2 : Stop random EC2 instances using Tags and Alarms](#demo-2--stop-random-ec2-instances-using-tags-and-alarms)
-  - [Demo 3 : Stop random EC2 instances using Tags, Alarms and Filters](#demo-3--stop-random-ec2-instances-using-tags-alarms-and-filters)
-  - [Demo 4 : Stop random EC2 instances using SSM](#demo-4--stop-random-ec2-instances-using-ssm)
+    - [Demo 1 : Stop random EC2 instances using Tags](#demo-1--stop-random-ec2-instances-using-tags)
+    - [Demo 2 : Stop random EC2 instances using Tags and Alarms](#demo-2--stop-random-ec2-instances-using-tags-and-alarms)
+    - [Demo 3 : Stop random EC2 instances using Tags, Alarms and Filters](#demo-3--stop-random-ec2-instances-using-tags-alarms-and-filters)
+    - [Demo 4 : Stop random EC2 instances using SSM](#demo-4--stop-random-ec2-instances-using-ssm)
   - [Clean up](#clean-up)
   - [References and more](#references-and-more)
 
@@ -38,17 +38,17 @@ It creates 11 EC2 instances of t2.micro. Edit the CloudFormation template, if yo
 
 To identify your target resources, you can specify the following:
 
-Resource tags – The tags applied to target resources. For example, you can specify that the target EC2 instances must include the tag "Experiment=ChaosReady". You will learn how to specify resources based on tags in Demo 1.
+**Resource tags** – The tags applied to target resources. For example, you can specify that the target EC2 instances must include the tag "Experiment=ChaosReady". You will learn how to specify resources based on tags in Demo 1.
 
-Resource filters – The path and values that represent resources with specific attributes. For more information, see Resource filters. You will learn how to specify resources based on tags and filters in Demo 3.
+**Resource filters** – The path and values that represent resources with specific attributes. For more information, see Resource filters. You will learn how to specify resources based on tags and filters in Demo 3.
 
-Resource IDs – The resource IDs of specific AWS resources. For example, the resource ID of an Amazon EC2 instance, such as i-1122334455aabbccd. All resource IDs must be the same resource type. You will learn how to specify specific AWS resources in Demo 4.
+**Resource IDs** – The resource IDs of specific AWS resources. For example, the resource ID of an Amazon EC2 instance, such as i-1122334455aabbccd. All resource IDs must be the same resource type. You will learn how to specify specific AWS resources in Demo 4.
 
 
-## [Demo 1 : Stop random EC2 instances using Tags](demo-1/README.md)
-## [Demo 2 : Stop random EC2 instances using Tags and Alarms](demo-2/README.md)
-## [Demo 3 : Stop random EC2 instances using Tags, Alarms and Filters](demo-3/README.md)
-## [Demo 4 : Stop random EC2 instances using SSM](demo-4/README.md)
+### [Demo 1 : Stop random EC2 instances using Tags](demo-1/)
+### [Demo 2 : Stop random EC2 instances using Tags and Alarms](demo-2/README.md)
+### [Demo 3 : Stop random EC2 instances using Tags, Alarms and Filters](demo-3/README.md)
+### [Demo 4 : Stop random EC2 instances using SSM](demo-4/README.md)
 
 ## Clean up
 
