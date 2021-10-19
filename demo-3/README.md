@@ -46,3 +46,5 @@ If you are using FIS for the first time then it is easy to view the experiments 
 When you start the AWS FIS Experiment, FIS will stop 3 instances that are tagged with the keypair "Experiment=ChaosReady" and are in Availability Zone b. It will wait for 5 mins before restarting the EC2 instances. 
 
 However, we will simulate real world use-case of issue detected when instances went offline and a CloudWatch alarm is raised. As the Alarm state changes to InAlarm, FIS will stop the experiment and rollback to stead state, i.e. all instances are up and running.
+
+![FIS Instances in AZ b stopped](../demo3-instances-stopped.png)

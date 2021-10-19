@@ -30,7 +30,7 @@ Its performance
 - Expose monitoring, observability & alarm blind spots
 - and more - like Improve recovery time, Improve operational skills The culture .. etc 
 
-There are different phases of Chaos Engineering.
+There are different phases of Chaos Engineering:
 
 ![Phases of Chaos Engineering](PhasesOfChaosEngineering.png)
 
@@ -56,7 +56,10 @@ To complete these demos, ensure you have AWS CLI installed and configured.
 2. In the below command, replace the _\<keypair-name\>_ with your Keypair from Step 1. Run the command to create the CloudFormation stack. 
 
 ```
-aws cloudformation create-stack --template-body file://cfn_fis_demo.json --stack-name fis-demo-stack --capabilities CAPABILITY_NAMED_IAM --parameters ParameterKey=KeyPairName,ParameterValue=<keypair-name>
+aws cloudformation create-stack --template-body file://cfn_fis_demo.json 
+/  --stack-name fis-demo-stack 
+/  --capabilities CAPABILITY_NAMED_IAM 
+/  --parameters ParameterKey=KeyPairName,ParameterValue=<keypair-name>
 
 ```
 It creates 11 EC2 instances of t2.micro. Edit the CloudFormation template, if you wish to launch fewer EC2 instances. Ensure you have instances in both the subnets/Availability zones. 
