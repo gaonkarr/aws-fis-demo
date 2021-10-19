@@ -32,7 +32,7 @@ Its performance
 
 There are different phases of Chaos Engineering:
 
-![Phases of Chaos Engineering](../images/PhasesOfChaosEngineering.png)
+![Phases of Chaos Engineering](images/PhasesOfChaosEngineering.png)
 
 ## Introduction to AWS Fault Injection Simulator
 AWS Fault Injection Simulator (AWS FIS) is a managed service that enables you to perform fault injection experiments on your AWS workloads. Fault injection is based on the principles of chaos engineering. These experiments stress an application by creating disruptive events so that you can observe how your application responds. You can then use this information to improve the performance and resiliency of your applications so that they behave as expected.
@@ -43,7 +43,7 @@ To use AWS FIS, you set up and run experiments that help you create the real-wor
 :---: 
 AWS FIS carries out real actions on real AWS resources in your system. Therefore, before you use AWS FIS to run experiments in production, we strongly recommend that you complete a planning phase and run the experiments in a pre-production environment.
 
-![FIS Architecture](../images/FIS-Architecture.png)
+![FIS Architecture](images/FIS-Architecture.png)
 
 ## Pre-requisites
 

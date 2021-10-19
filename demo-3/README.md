@@ -47,4 +47,4 @@ When you start the AWS FIS Experiment, FIS will stop 3 instances that are tagged
 
 However, we will simulate real world use-case of issue detected when instances went offline and a CloudWatch alarm is raised. As the Alarm state changes to InAlarm, FIS will stop the experiment and rollback to stead state, i.e. all instances are up and running.
 
-![FIS Instances in AZ b stopped](../../images/demo3-instances-stopped.png)
+![FIS Instances in AZ b stopped](../images/demo3-instances-stopped.png)
