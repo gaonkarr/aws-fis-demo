@@ -1,8 +1,9 @@
 
 # AWS Fault Injection Simulator 
 
-- 
 - [AWS Fault Injection Simulator](#aws-fault-injection-simulator)
+  - [Quick Overview of ChaosEngineering](#quick-overview-of-chaosengineering)
+  - [Introduction to AWS Fault Injection Simulator](#introduction-to-aws-fault-injection-simulator)
   - [Pre-requisites](#pre-requisites)
     - [Install AWS CLI](#install-aws-cli)
     - [Launch the CloudFormation template.](#launch-the-cloudformation-template)
@@ -14,11 +15,11 @@
   - [Clean up](#clean-up)
   - [References and more](#references-and-more)
 
-## ChaosEngineering 
+## Quick Overview of ChaosEngineering 
 
 
 
-## AWS Fault Injection Simulator
+## Introduction to AWS Fault Injection Simulator
 AWS Fault Injection Simulator (AWS FIS) is a managed service that enables you to perform fault injection experiments on your AWS workloads. Fault injection is based on the principles of chaos engineering. These experiments stress an application by creating disruptive events so that you can observe how your application responds. You can then use this information to improve the performance and resiliency of your applications so that they behave as expected.
 
 To use AWS FIS, you set up and run experiments that help you create the real-world conditions needed to uncover application issues that can be difficult to find otherwise. AWS FIS provides templates that generate disruptions, and the controls and guardrails that you need to run experiments in production, such as automatically rolling back or stopping the experiment if specific conditions are met.
