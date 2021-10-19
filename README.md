@@ -49,17 +49,23 @@ AWS FIS carries out real actions on real AWS resources in your system. Therefore
 
 ### Install AWS CLI
 To complete these demos, ensure you have AWS CLI installed and configured. 
+- [Installing the AWS CLI version 2](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+- [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config)
 
 ### Launch the CloudFormation template. 
 
-1. Create a Keypair in your AWS account and note the Keypair name
+1. Create a Keypair in your AWS account.
+
+```
+aws ec2 create-key-pair --key-name FISdemoKeyPair --query 'KeyMaterial' --output text > FISdemoKeyPair.pem
+```
 2. In the below command, replace the _\<keypair-name\>_ with your Keypair from Step 1. Run the command to create the CloudFormation stack. 
 
 ```
 aws cloudformation create-stack --template-body file://cfn_fis_demo.json 
 /  --stack-name fis-demo-stack 
 /  --capabilities CAPABILITY_NAMED_IAM 
-/  --parameters ParameterKey=KeyPairName,ParameterValue=<keypair-name>
+/  --parameters ParameterKey=KeyPairName,ParameterValue=FISdemoKeyPair
 
 ```
 It creates 11 EC2 instances of t2.micro. Edit the CloudFormation template, if you wish to launch fewer EC2 instances. Ensure you have instances in both the subnets/Availability zones. 

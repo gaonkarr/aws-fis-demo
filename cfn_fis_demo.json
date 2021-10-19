@@ -490,7 +490,12 @@
     "Demo4EC2instance" : {
       "Value" : {"Ref" : "EC2Instance" },
       "Description" : "EC2 Instance for Demo 4"
+    },
+    "EC2InstancePublicIP": {
+      "Value" : {"Fn::GetAtt" : [ "EC2Instance" , "PublicDnsName" ] },
+      "Description" : "Public DNS of EC2 Instance for Demo 4 to SSH"
     }
+
   }
 
 }

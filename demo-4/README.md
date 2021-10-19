@@ -25,7 +25,12 @@ In this experiment, we will be stopping instances that are tagged and are in a p
 aws fis create-experiment-template --cli-input-json file://ssm-fis.json
 ```
 
-3. Before you start the experiment, SSH into the EC2 instance and run `top` or `htop`. You can see the live CPU Utilisation of the EC2 instance. Monitor this while the FIS experiment is running.
+1. Before you start the experiment, SSH into the EC2 instance and run `top` or `htop`. You can see the live CPU Utilisation of the EC2 instance. Monitor this while the FIS experiment is running. Copy the public DNS name of EC2 instance from Outputs tab of CloudFormation stack deployed in pre-requisites and replace _\<Public-DNS\>_ with it. 
+
+```
+chmod 400 FISdemoKeyPair.pem
+ssh -i FISdemoKeyPair.pem ec2-user@<Public-DNS>
+```
 
 
 4. Start the AWS FIS Experiment
