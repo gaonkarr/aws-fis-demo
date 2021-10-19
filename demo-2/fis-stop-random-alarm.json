@@ -18,7 +18,7 @@
     "stopConditions": [
         {
             "source": "aws:cloudwatch:alarm",
-            "value": "arn:aws:cloudwatch:us-east-1:01234567890:alarm:NetworkInAbnormal"
+            "value": "arn:aws:cloudwatch:<region>:<01234567890>:alarm:NetworkInAbnormal"
         }
     ],
     "targets": {
@@ -30,5 +30,5 @@
             "selectionMode": "COUNT(3)"
         }
     },
-    "roleArn": "arn:aws:iam::01234567890:role/MyFISExperimentRole"
+    "roleArn": "arn:aws:iam::<01234567890>:role/MyFISExperimentRole"
 }

@@ -1,0 +1,44 @@
+{
+    "tags": {
+        "Name": "Stopwithfilters"
+    },
+    "description": "Stop and restart all instances in one availability zone",
+    "stopConditions": [
+        {
+            "source": "aws:cloudwatch:alarm",
+            "value": "arn:aws:cloudwatch:<region>:<01234567890>:alarm:NetworkInAbnormal"
+        }
+    ],
+    "actions": {
+        "StopInstances": {
+            "actionId": "aws:ec2:stop-instances",
+            "description": "stop the instances",
+            "parameters": {
+                "startInstancesAfterDuration": "PT5M"
+            },
+            "targets": {
+                "Instances": "toStop"
+            }
+        }
+    },
+    "targets": {
+        "toStop": {
+            "resourceType": "aws:ec2:instance",
+            "resourceTags": {
+                "Experiment": "ChaosReady"
+            },
+            "filters": [
+                {
+                    "path": "Placement.AvailabilityZone",
+                    "values": ["<region>b"]
+                },
+                {
+                    "path": "State.Name",
+                    "values": ["running"]
+                }
+                ],
+            "selectionMode": "ALL"
+        }
+    },
+    "roleArn": "arn:aws:iam::<01234567890>:role/MyFISExperimentRole"
+}

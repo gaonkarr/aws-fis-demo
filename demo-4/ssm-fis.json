@@ -1,0 +1,34 @@
+{
+    "tags": {
+        "Name": "FisSSMDemo"
+    },
+    "description": "FIS integration with SSM Demo",
+    "actions": {
+        "CPUBurn": {
+            "actionId": "aws:ssm:send-command",
+            "description": "burn cpu via ssm",
+            "parameters": {
+                "duration": "PT10M",
+                "documentArn": "arn:aws:ssm:<region>::document/AWSFIS-Run-CPU-Stress",
+                "documentParameters": "{\"DurationSeconds\": \"300\", \"InstallDependencies\":\"True\",\"CPU\":\"0\"}"
+            },
+            "targets": {
+                "Instances": "myInstance"
+            }
+        }
+    },
+    "targets": {
+        "myInstance": {
+            "resourceType": "aws:ec2:instance",
+            "resourceArns": ["arn:aws:ec2:<region>:<01234567890>:instance/<instance-id>"],
+            "selectionMode": "ALL"
+        }
+    },
+    "stopConditions": [
+        {
+            "source": "aws:cloudwatch:alarm",
+            "value": "arn:aws:cloudwatch:<region>:<01234567890>:alarm:ChaosDemo-High-CPU-Alarm"
+        }
+    ],
+    "roleArn": "arn:aws:iam::<01234567890>:role/MyFISExperimentRole"
+}
