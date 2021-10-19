@@ -45,5 +45,5 @@ When you start the AWS FIS Experiment, FIS will randomly stop 3 instances that a
 
 However, we will simulate real world use-case of issue detected when instances went offline and a CloudWatch alarm is raised. As the Alarm state changes to InAlarm, FIS will stop the experiment and rollback to stead state, i.e. all instances are up and running.
 
-![Experiment stopped by alarm](../demo2-experiment-stopped.png)
-![Instances running](../demo2-instances-running.png)
+![Experiment stopped by alarm](../../images/demo2-experiment-stopped.png)
+![Instances running](../../images/demo2-instances-running.png)

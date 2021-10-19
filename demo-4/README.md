@@ -44,4 +44,4 @@ If you are using FIS for the first time then it is easy to view the experiments 
 
 When you start the AWS FIS Experiment, FIS will run stress.ng on the instance via AWS Systems Manager. This will increase CPU Utilisation and ultimately raise the CloudWatch Alarm. The Alarm will then shut down the experiment.
 
-![FIS Stopped Experiment](../demo4-experiment-stopped.png)
+![FIS Stopped Experiment](../../images/demo4-experiment-stopped.png)

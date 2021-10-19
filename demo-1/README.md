@@ -32,5 +32,5 @@ If you are using FIS for the first time then it is easy to view the experiments 
 
 When you start the AWS FIS Experiment, FIS will randomly stop 3 instances that are tagged with the keypair "Experiment=ChaosReady". It will wait for 2mins and restart the EC2 instances. 
 
-![Experiment started](../demo1-experiment-started.png)
-![Instances stopped](../../demo1-instances-stopped.png)
+![Experiment started](../../images/demo1-experiment-started.png)
+![Instances stopped](../../images/demo1-instances-stopped.png)
