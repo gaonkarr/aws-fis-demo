@@ -61,7 +61,7 @@ aws ec2 create-key-pair --key-name FISdemoKeyPair --query 'KeyMaterial' --output
 aws cloudformation create-stack --template-body file://cfn_fis_demo.json 
 /  --stack-name fis-demo-stack 
 /  --capabilities CAPABILITY_NAMED_IAM 
-/  --parameters ParameterKey=KeyPairName,ParameterValue=FISdemoKeyPair
+/  --parameters ParameterKey=KeyName,ParameterValue=FISdemoKeyPair
 
 ```
 It creates 11 EC2 instances of t2.micro. Edit the CloudFormation template, if you wish to launch fewer EC2 instances. Ensure you have instances in both the subnets/Availability zones. 
